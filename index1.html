@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Eólica en Colombia</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Energía Eólica en Colombia</h1>
+    </header>
+
+    <main>
+        <section id="contenido">
+            <div id="inicio">
+                <h2>Inicio</h2>
+                <p>Bienvenido al portal sobre energía eólica en Colombia.</p>
+            </div>
+
+            <div id="origen" class="seccion">
+                <h2>Origen</h2>
+                <p>La energía eólica proviene del viento y ha sido aprovechada desde hace siglos...</p>
+            </div>
+
+            <div id="historia" class="seccion">
+                <h2>Historia</h2>
+                <p>En Colombia, el primer proyecto eólico se realizó en el departamento de La Guajira...</p>
+            </div>
+
+            <div id="funcionamiento" class="seccion">
+                <h2>Funcionamiento</h2>
+                <p>Los aerogeneradores convierten la energía cinética del viento en energía eléctrica...</p>
+            </div>
+
+            <div id="componentes" class="seccion">
+                <h2>Componentes</h2>
+                <ul>
+                    <li>Palas</li>
+                    <li>Torre</li>
+                    <li>Nacelle</li>
+                    <li>Sistema de control</li>
+                </ul>
+            </div>
+
+            <div id="proyectos" class="seccion">
+                <h2>Proyectos en Colombia</h2>
+                <ul>
+                    <li>Proyecto Jepírachi (La Guajira)</li>
+                    <li>Parque Eólico Ipapure</li>
+                    <li>Proyecto Tesalia</li>
+                </ul>
+            </div>
+
+            <div id="calculadora" class="seccion oculto">
+                <h2>Calculadora de Consumo Anual</h2>
+                <label for="consumoMensual">Consumo mensual (kWh):</label>
+                <input type="number" id="consumoMensual">
+                <button onclick="calcularConsumo()">Calcular</button>
+                <p id="resultadoConsumo"></p>
+            </div>
+
+            <div id="formulario" class="seccion oculto">
+                <h2>Formulario de Contacto</h2>
+                <form id="contactForm">
+                    <label>Nombre: <input type="text" id="nombre" required></label><br>
+                    <label>Correo: <input type="email" id="correo" required></label><br>
+                    <label>Mensaje: <textarea id="mensaje" required></textarea></label><br>
+                    <button type="submit">Enviar</button>
+                    <p id="mensajeForm"></p>
+                </form>
+            </div>
+
+            <div id="cargaCSV" class="seccion oculto">
+                <h2>Cargar Archivo CSV</h2>
+                <input type="file" id="archivoCSV" accept=".csv">
+                <button onclick="procesarCSV()">Cargar</button>
+                <table id="tablaCSV"></table>
+            </div>
+
+            <div id="graficos" class="seccion oculto">
+                <h2>Gráficos</h2>
+                <button onclick="mostrarGrafico('torta')">Torta</button>
+                <button onclick="mostrarGrafico('linea')">Línea</button>
+                <button onclick="mostrarGrafico('barras')">Barras</button>
+                <canvas id="graficoCanvas"></canvas>
+            </div>
+        </section>
+
+        <aside id="menu">
+            <h3>Menú</h3>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#origen">Origen</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#funcionamiento">Funcionamiento</a></li>
+                <li><a href="#componentes">Componentes</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#formulario">Contacto</a></li>
+                <li><a href="#cargaCSV">Cargar CSV</a></li>
+                <li><a href="#graficos">Gráficos</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <script src="../script1.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Eólica en Colombia</title>
+    <link rel="stylesheet" href="../style2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <!-- Sección Origen -->
+            <section id="origen" class="content-section active">
+                <h1>Origen de la Energía Eólica</h1>
+                <div class="hero-image">
+                    <div class="wind-turbine-icon">🏭</div>
+                </div>
+                <p>La energía eólica tiene sus orígenes en la antigüedad, cuando las civilizaciones comenzaron a aprovechar la fuerza del viento para diversas actividades. Los primeros molinos de viento aparecieron en Persia alrededor del siglo VII, utilizados principalmente para moler granos y bombear agua.</p>
+                <p>En Colombia, el aprovechamiento de la energía eólica es relativamente reciente, comenzando con estudios de potencial eólico en la década de 1990. El país cuenta con excelentes recursos eólicos, especialmente en la región Caribe, donde los vientos alisios proporcionan condiciones ideales para la generación de energía limpia.</p>
+                <div class="info-card">
+                    <h3>¿Por qué Colombia?</h3>
+                    <p>Colombia posee ventajas únicas para el desarrollo eólico: vientos constantes en La Guajira, proximidad al ecuador que garantiza estabilidad climática, y la necesidad de diversificar su matriz energética tradicionalmente hidroeléctrica.</p>
+                </div>
+            </section>
+
+            <!-- Sección Historia -->
+            <section id="historia" class="content-section">
+                <h1>Historia de la Energía Eólica en Colombia</h1>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">1990s</div>
+                        <div class="event">Primeros estudios de potencial eólico realizados por el IDEAM y universidades colombianas.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2003</div>
+                        <div class="event">Instalación del primer aerogenerador experimental en Jepírachi, La Guajira, por EPM.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2014</div>
+                        <div class="event">Ley 1715 de integración de energías renovables no convencionales al Sistema Energético Nacional.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2019</div>
+                        <div class="event">Inicio de operación comercial del parque eólico Jepírachi con 19.5 MW de capacidad.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2022</div>
+                        <div class="event">Entrada en operación de Parque Eólico Guajira I con 20 MW de capacidad instalada.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Funcionamiento -->
+            <section id="funcionamiento" class="content-section">
+                <h1>Funcionamiento de la Energía Eólica</h1>
+                <div class="funcionamiento-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Captación del Viento</h3>
+                        <p>Las palas del aerogenerador capturan la energía cinética del viento y comienzan a rotar.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Conversión Mecánica</h3>
+                        <p>La rotación de las palas hace girar un eje de baja velocidad conectado a una caja multiplicadora.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Aceleración</h3>
+                        <p>La caja multiplicadora aumenta la velocidad de rotación de 30-60 rpm a 1000-1800 rpm.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Generación Eléctrica</h3>
+                        <p>El generador eléctrico convierte la energía mecánica rotacional en energía eléctrica.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h3>Transformación</h3>
+                        <p>Un transformador eleva el voltaje para su transmisión a través de las líneas eléctricas.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h3>Distribución</h3>
+                        <p>La energía se distribuye a través de la red eléctrica hacia consumidores finales.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Componentes -->
+            <section id="componentes" class="content-section">
+                <h1>Componentes de un Aerogenerador</h1>
+                <div class="aerogenerator-diagram">
+                    <div class="diagram-container">
+                        <svg viewBox="0 0 400 500" class="aerogenerator-svg">
+                            <!-- Torre -->
+                            <rect x="195" y="150" width="10" height="320" fill="#8D6E63" stroke="#5D4037" stroke-width="2"/>
+                            <rect x="190" y="460" width="20" height="30" fill="#616161" stroke="#424242" stroke-width="2"/>
+                            
+                            <!-- Nacelle -->
+                            <ellipse cx="200" cy="150" rx="35" ry="20" fill="#2196F3" stroke="#1976D2" stroke-width="2"/>
+                            
+                            <!-- Rotor Hub -->
+                            <circle cx="200" cy="150" r="8" fill="#FF9800" stroke="#F57C00" stroke-width="2"/>
+                            
+                            <!-- Palas -->
+                            <ellipse cx="200" cy="80" rx="8" ry="70" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="2" transform="rotate(0 200 150)"/>
+                            <ellipse cx="200" cy="80" rx="8" ry="70" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="2" transform="rotate(120 200 150)"/>
+                            <ellipse cx="200" cy="80" rx="8" ry="70" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="2" transform="rotate(240 200 150)"/>
+                            
+                            <!-- Cables -->
+                            <path d="M 195 470 Q 180 480 160 485" stroke="#FFD54F" stroke-width="3" fill="none"/>
+                            
+                            <!-- Transformador -->
+                            <rect x="140" y="475" width="30" height="20" fill="#4CAF50" stroke="#388E3C" stroke-width="2" rx="3"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="components-grid">
+                    <div class="component">
+                        <div class="component-image">
+                            <svg viewBox="0 0 100 100" class="component-icon">
+                                <ellipse cx="50" cy="25" rx="5" ry="35" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="2"/>
+                                <ellipse cx="50" cy="25" rx="5" ry="35" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="2" transform="rotate(120 50 50)"/>
+                                <ellipse cx="50" cy="25" rx="5" ry="35" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="2" transform="rotate(240 50 50)"/>
+                                <circle cx="50" cy="50" r="6" fill="#FF9800"/>
+                            </svg>
+                        </div>
+                        <h3>Rotor y Palas</h3>
+                        <p>Capturan la energía del viento. Están diseñadas aerodinámicamente para maximizar la captación de energía con vientos de diferentes velocidades. Fabricadas en fibra de carbono o vidrio.</p>
+                    </div>
+                    
+                    <div class="component">
+                        <div class="component-image">
+                            <svg viewBox="0 0 100 100" class="component-icon">
+                                <rect x="20" y="35" width="60" height="30" fill="#607D8B" stroke="#455A64" stroke-width="2" rx="5"/>
+                                <circle cx="30" cy="50" r="8" fill="#9E9E9E" stroke="#616161" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="6" fill="#9E9E9E" stroke="#616161" stroke-width="2"/>
+                                <circle cx="70" cy="50" r="8" fill="#9E9E9E" stroke="#616161" stroke-width="2"/>
+                                <path d="M30 42 L70 42" stroke="#FFD54F" stroke-width="2"/>
+                                <path d="M30 58 L70 58" stroke="#FFD54F" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Caja Multiplicadora</h3>
+                        <p>Aumenta la velocidad de rotación del rotor para optimizar la generación eléctrica. Convierte las bajas RPM del rotor (30-60) en altas RPM para el generador (1000-1800).</p>
+                    </div>
+                    
+                    <div class="component">
+                        <div class="component-image">
+                            <svg viewBox="0 0 100 100" class="component-icon">
+                                <cylinder cx="50" cy="50" r="25" h="15" fill="#4CAF50" stroke="#388E3C" stroke-width="2"/>
+                                <rect x="35" y="42" width="30" height="16" fill="#4CAF50" stroke="#388E3C" stroke-width="2" rx="3"/>
+                                <circle cx="50" cy="50" r="8" fill="#2196F3" stroke="#1976D2" stroke-width="2"/>
+                                <path d="M42 50 L58 50 M50 42 L50 58" stroke="#FFF" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Generador Eléctrico</h3>
+                        <p>Convierte la energía mecánica rotacional en energía eléctrica. Generalmente son generadores síncronos o asíncronos de inducción con potencias de 1.5 a 3 MW.</p>
+                    </div>
+                    
+                    <div class="component">
+                        <div class="component-image">
+                            <svg viewBox="0 0 100 100" class="component-icon">
+                                <rect x="47" y="20" width="6" height="60" fill="#8D6E63" stroke="#5D4037" stroke-width="2"/>
+                                <rect x="42" y="75" width="16" height="10" fill="#616161" stroke="#424242" stroke-width="2"/>
+                                <rect x="40" y="82" width="20" height="8" fill="#424242"/>
+                                <path d="M20 15 L47 20 M80 15 L53 20" stroke="#FFD54F" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Torre</h3>
+                        <p>Estructura que eleva el aerogenerador para acceder a vientos más fuertes y constantes. Su altura varía entre 80 y 120 metros. Fabricada en acero o concreto.</p>
+                    </div>
+                    
+                    <div class="component">
+                        <div class="component-image">
+                            <svg viewBox="0 0 100 100" class="component-icon">
+                                <ellipse cx="50" cy="40" rx="30" ry="15" fill="#2196F3" stroke="#1976D2" stroke-width="2"/>
+                                <circle cx="50" cy="40" r="4" fill="#FF5722"/>
+                                <path d="M35 40 Q50 25 65 40" stroke="#4CAF50" stroke-width="2" fill="none"/>
+                                <polygon points="62,37 68,40 62,43" fill="#4CAF50"/>
+                            </svg>
+                        </div>
+                        <h3>Sistema de Orientación</h3>
+                        <p>Mantiene el rotor perpendicular a la dirección del viento para maximizar la captación de energía. Incluye sensores de viento y motores de orientación.</p>
+                    </div>
+                    
+                    <div class="component">
+                        <div class="component-image">
+                            <svg viewBox="0 0 100 100" class="component-icon">
+                                <rect x="30" y="30" width="40" height="40" fill="#607D8B" stroke="#455A64" stroke-width="2" rx="5"/>
+                                <circle cx="40" cy="45" r="3" fill="#4CAF50"/>
+                                <circle cx="50" cy="45" r="3" fill="#FF9800"/>
+                                <circle cx="60" cy="45" r="3" fill="#F44336"/>
+                                <rect x="35" y="55" width="30" height="3" fill="#9E9E9E"/>
+                                <rect x="35" y="60" width="25" height="3" fill="#9E9E9E"/>
+                            </svg>
+                        </div>
+                        <h3>Sistema de Control</h3>
+                        <p>Monitorea y controla el funcionamiento del aerogenerador, incluyendo velocidad, orientación y protecciones de seguridad. Incluye SCADA y sistemas de comunicación.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Proyectos -->
+            <section id="proyectos" class="content-section">
+                <h1>Proyectos Importantes en Colombia</h1>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Parque Eólico Jepírachi</h3>
+                        <div class="project-details">
+                            <span class="capacity">19.5 MW</span>
+                            <span class="location">La Guajira</span>
+                        </div>
+                        <p>Pionero en Colombia, operado por EPM. Cuenta con 15 aerogeneradores y genera energía suficiente para abastecer aproximadamente 50,000 personas.</p>
+                        <div class="project-status operational">Operacional</div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Parque Eólico Guajira I</h3>
+                        <div class="project-details">
+                            <span class="capacity">20 MW</span>
+                            <span class="location">La Guajira</span>
+                        </div>
+                        <p>Desarrollado por Enel Green Power, representa la expansión de la energía eólica en la región con tecnología de última generación.</p>
+                        <div class="project-status operational">Operacional</div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Proyecto Windpeshi</h3>
+                        <div class="project-details">
+                            <span class="capacity">205 MW</span>
+                            <span class="location">La Guajira</span>
+                        </div>
+                        <p>Uno de los proyectos más ambiciosos, desarrollado por Enel. Incluye 61 aerogeneradores de alta tecnología.</p>
+                        <div class="project-status development">En Desarrollo</div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Parque Eólico Beta</h3>
+                        <div class="project-details">
+                            <span class="capacity">280 MW</span>
+                            <span class="location">La Guajira</span>
+                        </div>
+                        <p>Proyecto de Isagen que representa una importante inversión en energía renovable para diversificar la matriz energética colombiana.</p>
+                        <div class="project-status planning">En Planificación</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calculadora -->
+            <section id="calculadora" class="content-section">
+                <h1>Calculadora de Consumo Energético Anual</h1>
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <h3>Ingresa tus datos de consumo</h3>
+                        <div class="form-group">
+                            <label for="consumo-mensual">Consumo mensual promedio (kWh):</label>
+                            <input type="number" id="consumo-mensual" placeholder="Ej: 300">
+                        </div>
+                        <div class="form-group">
+                            <label for="tarifa">Tarifa por kWh (COP):</label>
+                            <input type="number" id="tarifa" placeholder="Ej: 650" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="personas">Número de personas en el hogar:</label>
+                            <input type="number" id="personas" placeholder="Ej: 4">
+                        </div>
+                        <button onclick="calcularConsumo()" class="btn-calculate">Calcular</button>
+                    </div>
+                    <div class="calculator-results" id="resultados-calculadora">
+                        <h3>Resultados</h3>
+                        <div class="result-item">
+                            <span>Consumo anual:</span>
+                            <span id="consumo-anual">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Costo anual:</span>
+                            <span id="costo-anual">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Consumo per cápita:</span>
+                            <span id="consumo-percapita">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Ahorro potencial con eólica (30%):</span>
+                            <span id="ahorro-eolica">-</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulario de Contacto -->
+            <section id="contacto" class="content-section">
+                <h1>Contacto</h1>
+                <div class="contact-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <span class="error-message" id="error-nombre"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="error-email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                            <span class="error-message" id="error-telefono"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa/Organización</label>
+                            <input type="text" id="empresa" name="empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="informacion">Información general</option>
+                                <option value="inversion">Oportunidades de inversión</option>
+                                <option value="consulta">Consulta técnica</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <span class="error-message" id="error-asunto"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            <span class="error-message" id="error-mensaje"></span>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <span>info@eolicacolombia.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📞 Teléfono:</strong>
+                            <span>+57 (1) 234-5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📍 Dirección:</strong>
+                            <span>Carrera 7 #71-21, Bogotá, Colombia</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>🕒 Horario:</strong>
+                            <span>Lunes a Viernes: 8:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cargar CSV -->
+            <section id="cargar-csv" class="content-section">
+                <h1>Análisis de Datos de Energía</h1>
+                <div class="csv-container">
+                    <div class="file-upload">
+                        <h3>Cargar archivo CSV</h3>
+                        <div class="upload-area" id="upload-area">
+                            <div class="upload-icon">📁</div>
+                            <p>Arrastra tu archivo CSV aquí o haz clic para seleccionar</p>
+                            <input type="file" id="csvFile" accept=".csv" onchange="cargarCSV(event)" style="display: none;">
+                            <button onclick="document.getElementById('csvFile').click()" class="btn-upload">Seleccionar Archivo</button>
+                        </div>
+                        <div class="file-info">
+                            <p><strong>Formato esperado:</strong> CSV con encabezados en la primera fila</p>
+                            <p><strong>Ejemplo de datos:</strong> Mes, Generación(MWh), Velocidad_Viento(m/s), Temperatura(°C)</p>
+                            <p><strong>Tamaño máximo:</strong> 5MB</p>
+                        </div>
+                    </div>
+                    
+                    <div id="csv-content" class="csv-content" style="display: none;">
+                        <div class="csv-header">
+                            <h3>Datos Cargados</h3>
+                            <div class="csv-actions">
+                                <button onclick="exportarCSV()" class="btn-action">📥 Exportar</button>
+                                <button onclick="mostrarEstadisticas()" class="btn-action">📊 Estadísticas</button>
+                                <span id="csv-info" class="csv-stats"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table id="csvTable" class="data-table">
+                                <thead id="csvTableHead"></thead>
+                                <tbody id="csvTableBody"></tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="pagination-container" id="pagination-container" style="display: none;">
+                            <button onclick="cambiarPagina(-1)" class="btn-pagination">← Anterior</button>
+                            <span id="pagination-info">Página 1 de 1</span>
+                            <button onclick="cambiarPagina(1)" class="btn-pagination">Siguiente →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gráfico de Torta -->
+            <section id="grafico-torta" class="content-section">
+                <h1>Distribución de Energía - Gráfico de Torta</h1>
+                <div class="chart-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <p class="chart-description">Este gráfico muestra la distribución porcentual de los datos cargados desde el archivo CSV.</p>
+            </section>
+
+            <!-- Gráfico de Líneas -->
+            <section id="grafico-lineas" class="content-section">
+                <h1>Tendencia Temporal - Gráfico de Líneas</h1>
+                <div class="chart-container">
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <p class="chart-description">Este gráfico muestra la evolución temporal de los datos de generación eólica.</p>
+            </section>
+
+            <!-- Gráfico de Barras -->
+            <section id="grafico-barras" class="content-section">
+                <h1>Comparación de Datos - Gráfico de Barras</h1>
+                <div class="chart-container">
+                    <canvas id="barChart"></canvas>
+                </div>
+                <p class="chart-description">Este gráfico permite comparar diferentes categorías de datos de manera visual.</p>
+            </section>
+        </main>
+
+        <!-- Menú Lateral Derecho -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>🌪️ Energía Eólica Colombia</h2>
+            </div>
+            <ul class="menu">
+                <li><a href="#" onclick="mostrarSeccion('origen')" class="menu-item active">Origen</a></li>
+                <li><a href="#" onclick="mostrarSeccion('historia')" class="menu-item">Historia</a></li>
+                <li><a href="#" onclick="mostrarSeccion('funcionamiento')" class="menu-item">Funcionamiento</a></li>
+                <li><a href="#" onclick="mostrarSeccion('componentes')" class="menu-item">Componentes</a></li>
+                <li><a href="#" onclick="mostrarSeccion('proyectos')" class="menu-item">Proyectos</a></li>
+                <li><a href="#" onclick="mostrarSeccion('calculadora')" class="menu-item">Calculadora</a></li>
+                <li><a href="#" onclick="mostrarSeccion('contacto')" class="menu-item">Contacto</a></li>
+                <li><a href="#" onclick="mostrarSeccion('cargar-csv')" class="menu-item">Cargar CSV</a></li>
+                <li><a href="#" onclick="mostrarSeccion('grafico-torta')" class="menu-item">Gráfico Torta</a></li>
+                <li><a href="#" onclick="mostrarSeccion('grafico-lineas')" class="menu-item">Gráfico Líneas</a></li>
+                <li><a href="#" onclick="mostrarSeccion('grafico-barras')" class="menu-item">Gráfico Barras</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../script2.js"></script>
+</body>
+</html>

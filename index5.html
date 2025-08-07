@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Eólica Colombia - Portal Interactivo</title>
+    <link rel="stylesheet" href="style5.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar fijo a la izquierda -->
+    <nav class="sidebar">
+        <div class="logo">
+            <h1>🌪️ Energía Eólica</h1>
+            <p>Portal Interactivo</p>
+        </div>
+        <div class="nav-menu">
+            <button class="menu-item active" onclick="mostrarSeccion('origen')">🏠 Inicio</button>
+            <button class="menu-item" onclick="mostrarSeccion('componente-molino')">⚙️ Componente Molino</button>
+            <button class="menu-item" onclick="mostrarSeccion('datos-csv')">📊 Datos CSV</button>
+            <button class="menu-item" onclick="mostrarSeccion('grafico-torta')">🥧 Gráfico Torta</button>
+            <button class="menu-item" onclick="mostrarSeccion('grafico-lineas')">📈 Gráfico Líneas</button>
+            <button class="menu-item" onclick="mostrarSeccion('grafico-barras')">📊 Gráfico Barras</button>
+            <button class="menu-item" onclick="mostrarSeccion('calculadora')">🧮 Calculadora</button>
+            <button class="menu-item" onclick="mostrarSeccion('contacto')">📞 Contacto</button>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Sección Inicio -->
+        <section id="origen" class="content-section active">
+            <div class="container">
+                <h1>Energía Eólica en Colombia</h1>
+
+                <div class="energia-animation-container">
+                    <div class="animation-scene">
+                        <!-- Molino -->
+                        <div class="windmill">
+                            <div class="windmill-tower"></div>
+                            <div class="windmill-nacelle"></div>
+                            <div class="windmill-blades">
+                                <div class="blade blade-1"></div>
+                                <div class="blade blade-2"></div>
+                                <div class="blade blade-3"></div>
+                            </div>
+                        </div>
+
+                        <!-- Líneas de energía -->
+                        <div class="energy-lines">
+                            <div class="energy-line line-1">
+                                <div class="energy-particle particle-1"></div>
+                                <div class="energy-particle particle-2"></div>
+                                <div class="energy-particle particle-3"></div>
+                            </div>
+                        </div>
+
+                        <!-- Casa -->
+                        <div class="house">
+                            <div class="house-base"></div>
+                            <div class="house-roof"></div>
+                            <div class="house-door"></div>
+                            <div class="house-window window-1">
+                                <div class="window-light" id="light-1"></div>
+                            </div>
+                            <div class="house-window window-2">
+                                <div class="window-light" id="light-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-content">
+                    <h2>Bienvenido al Portal de Energía Eólica</h2>
+                    <p>Colombia tiene un gran potencial eólico. Explora datos, visualizaciones y calcula tu consumo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras secciones... -->
+        <section id="componente-molino" class="content-section">...</section>
+        <section id="datos-csv" class="content-section">...</section>
+        <section id="grafico-torta" class="content-section">...</section>
+        <section id="grafico-lineas" class="content-section">...</section>
+        <section id="grafico-barras" class="content-section">...</section>
+        <section id="calculadora" class="content-section">...</section>
+        <section id="contacto" class="content-section">...</section>
+    </main>
+
+    <script src="script5.js"></script>
+</body>
+</html>

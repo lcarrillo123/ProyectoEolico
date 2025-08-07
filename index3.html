@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Eólica Colombia - Portal Interactivo</title>
+    <link rel="stylesheet" href="style3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🌪️ Energía Eólica Colombia</h1>
+                <p>Portal Interactivo de Datos</p>
+            </div>
+            <nav class="nav-menu">
+                <button class="menu-item active" onclick="mostrarSeccion('origen')">🏠 Inicio</button>
+                <button class="menu-item" onclick="mostrarSeccion('datos-csv')">📊 Datos CSV</button>
+                <button class="menu-item" onclick="mostrarSeccion('grafico-torta')">🥧 Gráfico Torta</button>
+                <button class="menu-item" onclick="mostrarSeccion('grafico-lineas')">📈 Gráfico Líneas</button>
+                <button class="menu-item" onclick="mostrarSeccion('grafico-barras')">📊 Gráfico Barras</button>
+                <button class="menu-item" onclick="mostrarSeccion('calculadora')">🧮 Calculadora</button>
+                <button class="menu-item" onclick="mostrarSeccion('contacto')">📞 Contacto</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sección Origen/Inicio -->
+        <section id="origen" class="content-section active">
+            <div class="container">
+                <h1>Energía Eólica en Colombia</h1>
+                
+                <!-- Animación del Sistema Eólico -->
+                <div class="energia-animation-container">
+                    <div class="animation-scene">
+                        <!-- Molino Eólico -->
+                        <div class="windmill">
+                            <div class="windmill-tower"></div>
+                            <div class="windmill-nacelle"></div>
+                            <div class="windmill-blades">
+                                <div class="blade blade-1"></div>
+                                <div class="blade blade-2"></div>
+                                <div class="blade blade-3"></div>
+                            </div>
+                        </div>
+
+                        <!-- Líneas de Energía -->
+                        <div class="energy-lines">
+                            <div class="energy-line line-1">
+                                <div class="energy-particle particle-1"></div>
+                                <div class="energy-particle particle-2"></div>
+                                <div class="energy-particle particle-3"></div>
+                            </div>
+                            <div class="energy-line line-2">
+                                <div class="energy-particle particle-1"></div>
+                                <div class="energy-particle particle-2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Casa -->
+                        <div class="house">
+                            <div class="house-base"></div>
+                            <div class="house-roof"></div>
+                            <div class="house-door"></div>
+                            <div class="house-window window-1">
+                                <div class="window-light"></div>
+                            </div>
+                            <div class="house-window window-2">
+                                <div class="window-light"></div>
+                            </div>
+                            <div class="house-chimney"></div>
+                        </div>
+
+                        <!-- Panel de Control -->
+                        <div class="control-panel">
+                            <button id="toggle-animation" class="control-btn">⏸️ Pausar Animación</button>
+                            <div class="energy-meter">
+                                <div class="meter-label">Energía Generada</div>
+                                <div class="meter-bar">
+                                    <div class="meter-fill"></div>
+                                </div>
+                                <div class="meter-value">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h2>Bienvenido al Portal de Energía Eólica</h2>
+                        <p>Colombia cuenta con un potencial eólico significativo, especialmente en la región Caribe. 
+                        Este portal interactivo te permite explorar datos, estadísticas y realizar cálculos 
+                        relacionados con la energía eólica en el país.</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Análisis de Datos</h3>
+                                <p>Carga y analiza archivos CSV con datos de generación eólica</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📈</div>
+                                <h3>Visualizaciones</h3>
+                                <p>Gráficos interactivos para mejor comprensión de los datos</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🧮</div>
+                                <h3>Calculadora</h3>
+                                <p>Calcula el consumo energético y potencial de ahorro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-container">
+                        <h3>Estadísticas de Colombia</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">18.4</div>
+                                <div class="stat-label">GW Potencial Eólico</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">0.1</div>
+                                <div class="stat-label">GW Instalado</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">15</div>
+                                <div class="stat-label">Proyectos en Desarrollo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Componente del Molino -->
+        <section id="componente-molino" class="content-section">
+            <div class="container">
+                <h1>Componentes del Aerogenerador</h1>
+                
+                <div class="molino-interactive">
+                    <div class="molino-diagram">
+                        <!-- Molino 3D Interactivo -->
+                        <div class="molino-3d">
+                            <div class="molino-base">
+                                <div class="foundation"></div>
+                            </div>
+                            
+                            <div class="tower-section" data-component="tower">
+                                <div class="tower-body"></div>
+                                <div class="tower-ladder"></div>
+                            </div>
+                            
+                            <div class="nacelle-section" data-component="nacelle">
+                                <div class="nacelle-body">
+                                    <div class="generator-housing"></div>
+                                    <div class="gearbox"></div>
+                                    <div class="brake-system"></div>
+                                </div>
+                                <div class="nacelle-cover"></div>
+                            </div>
+                            
+                            <div class="rotor-section" data-component="rotor">
+                                <div class="hub">
+                                    <div class="hub-center"></div>
+                                </div>
+                                <div class="blade-assembly">
+                                    <div class="blade-interactive blade-1" data-component="blade1"></div>
+                                    <div class="blade-interactive blade-2" data-component="blade2"></div>
+                                    <div class="blade-interactive blade-3" data-component="blade3"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="yaw-system" data-component="yaw">
+                                <div class="yaw-bearing"></div>
+                                <div class="yaw-motor"></div>
+                            </div>
+                            
+                            <div class="control-cabinet" data-component="control">
+                                <div class="cabinet-body"></div>
+                                <div class="cabinet-lights">
+                                    <div class="status-light green"></div>
+                                    <div class="status-light yellow"></div>
+                                    <div class="status-light red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Panel de Información -->
+                        <div class="component-info-panel">
+                            <h3 id="component-title">Selecciona un componente</h3>
+                            <div id="component-description" class="component-description">
+                                Haz clic en cualquier parte del aerogenerador para conocer sus componentes.
+                            </div>
+                            
+                            <div id="component-specs" class="component-specs">
+                                <h4>Especificaciones Técnicas</h4>
+                                <div class="specs-grid">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Material:</span>
+                                        <span class="spec-value" id="spec-material">-</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Peso:</span>
+                                        <span class="spec-value" id="spec-weight">-</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Dimensiones:</span>
+                                        <span class="spec-value" id="spec-dimensions">-</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Vida Útil:</span>
+                                        <span class="spec-value" id="spec-lifespan">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles del Molino -->
+                    <div class="molino-controls">
+                        <h3>Controles de Simulación</h3>
+                        <div class="control-group">
+                            <label for="wind-speed">Velocidad del Viento (m/s)</label>
+                            <input type="range" id="wind-speed" min="0" max="25" value="12" step="0.5">
+                            <span id="wind-speed-value">12 m/s</span>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="blade-angle">Ángulo de las Palas (°)</label>
+                            <input type="range" id="blade-angle" min="0" max="90" value="15" step="1">
+                            <span id="blade-angle-value">15°</span>
+                        </div>
+                        
+                        <div class="control-buttons">
+                            <button id="start-turbine" class="control-btn active">▶️ Iniciar</button>
+                            <button id="stop-turbine" class="control-btn">⏹️ Detener</button>
+                            <button id="emergency-stop" class="control-btn emergency">🚨 Emergencia</button>
+                        </div>
+                        
+                        <div class="performance-metrics">
+                            <h4>Métricas de Rendimiento</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <div class="metric-label">RPM del Rotor</div>
+                                    <div class="metric-value" id="rotor-rpm">18.5</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">Potencia (kW)</div>
+                                    <div class="metric-value" id="power-output">1,250</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">Eficiencia (%)</div>
+                                    <div class="metric-value" id="efficiency">87.3</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-label">Temperatura (°C)</div>
+                                    <div class="metric-value" id="temperature">45.2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lista de Componentes -->
+                <div class="components-list">
+                    <h3>Principales Componentes</h3>
+                    <div class="components-grid">
+                        <div class="component-card" data-component="rotor">
+                            <div class="component-icon">🔄</div>
+                            <h4>Rotor</h4>
+                            <p>Sistema de captación de energía eólica</p>
+                        </div>
+                        <div class="component-card" data-component="nacelle">
+                            <div class="component-icon">⚙️</div>
+                            <h4>Góndola</h4>
+                            <p>Aloja el generador y sistemas de control</p>
+                        </div>
+                        <div class="component-card" data-component="tower">
+                            <div class="component-icon">🏗️</div>
+                            <h4>Torre</h4>
+                            <p>Estructura de soporte del aerogenerador</p>
+                        </div>
+                        <div class="component-card" data-component="yaw">
+                            <div class="component-icon">🧭</div>
+                            <h4>Sistema de Orientación</h4>
+                            <p>Orienta el rotor hacia el viento</p>
+                        </div>
+                        <div class="component-card" data-component="control">
+                            <div class="component-icon">🎛️</div>
+                            <h4>Sistema de Control</h4>
+                            <p>Monitoreo y control automático</p>
+                        </div>
+                        <div class="component-card" data-component="blade1">
+                            <div class="component-icon">🌬️</div>
+                            <h4>Palas</h4>
+                            <p>Captan la energía cinética del viento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Sección Datos CSV -->
+        <section id="datos-csv" class="content-section">
+            <div class="container">
+                <h1>Carga y Análisis de Datos CSV</h1>
+                
+                <div class="upload-section">
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-icon">📁</div>
+                        <h3>Arrastra tu archivo CSV aquí</h3>
+                        <p>o haz clic para seleccionar</p>
+                        <input type="file" id="csvFile" accept=".csv" onchange="cargarCSV(event)" style="display: none;">
+                        <button onclick="document.getElementById('csvFile').click()" class="upload-btn">
+                            Seleccionar Archivo CSV
+                        </button>
+                    </div>
+                    
+                    <div class="file-info">
+                        <div id="csv-info"></div>
+                        <div class="file-actions">
+                            <button onclick="exportarCSV()" class="action-btn">💾 Exportar</button>
+                            <button onclick="mostrarEstadisticas()" class="action-btn">📊 Estadísticas</button>
+                            <button onclick="imprimirTablaCSV()" class="action-btn">🖨️ Imprimir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="csv-content" style="display: none;">
+                    <div class="table-container">
+                        <table id="csvTable" class="data-table">
+                            <thead id="csvTableHead"></thead>
+                            <tbody id="csvTableBody"></tbody>
+                        </table>
+                    </div>
+                    
+                    <div id="pagination-container" class="pagination">
+                        <button onclick="cambiarPagina(-1)" class="pagination-btn">⬅️ Anterior</button>
+                        <span id="pagination-info"></span>
+                        <button onclick="cambiarPagina(1)" class="pagination-btn">Siguiente ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Gráfico de Torta -->
+        <section id="grafico-torta" class="content-section">
+            <div class="container">
+                <h1>Distribución de Datos - Gráfico de Torta</h1>
+                <div class="chart-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="chart-controls">
+                    <button onclick="actualizarGraficoTorta()" class="chart-btn">🔄 Actualizar</button>
+                    <button onclick="descargarGrafico('pieChart')" class="chart-btn">💾 Descargar</button>
+                </div>
+                <blockquote class="chart-description">
+                    <p>Este gráfico muestra la distribución porcentual de diferentes categorías de datos.</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Sección Gráfico de Líneas -->
+        <section id="grafico-lineas" class="content-section">
+            <div class="container">
+                <h1>Evolución Temporal - Gráfico de Líneas</h1>
+                <div class="chart-container">
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <div class="chart-controls">
+                    <button onclick="actualizarGraficoLineas()" class="chart-btn">🔄 Actualizar</button>
+                    <button onclick="descargarGrafico('lineChart')" class="chart-btn">💾 Descargar</button>
+                </div>
+                <blockquote class="chart-description">
+                    <p>Este gráfico muestra la evolución de los datos a lo largo del tiempo.</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Sección Gráfico de Barras -->
+        <section id="grafico-barras" class="content-section">
+            <div class="container">
+                <h1>Comparación de Datos - Gráfico de Barras</h1>
+                <div class="chart-container">
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-controls">
+                    <button onclick="actualizarGraficoBarras()" class="chart-btn">🔄 Actualizar</button>
+                    <button onclick="descargarGrafico('barChart')" class="chart-btn">💾 Descargar</button>
+                </div>
+                <blockquote class="chart-description">
+                    <p>Este gráfico permite comparar diferentes categorías de datos de manera visual.</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Sección Calculadora -->
+        <section id="calculadora" class="content-section">
+            <div class="container">
+                <h1>Calculadora de Consumo Energético</h1>
+                
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <h3>Ingresa tus datos</h3>
+                        
+                        <div class="form-group">
+                            <label for="consumo-mensual">Consumo Mensual (kWh)</label>
+                            <input type="number" id="consumo-mensual" min="0" step="0.01" placeholder="Ej: 300">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tarifa">Tarifa por kWh (COP)</label>
+                            <input type="number" id="tarifa" min="0" step="0.01" placeholder="Ej: 500">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="personas">Número de Personas</label>
+                            <input type="number" id="personas" min="1" placeholder="Ej: 4">
+                        </div>
+                        
+                        <button onclick="calcularConsumo()" class="calc-btn">🧮 Calcular</button>
+                    </div>
+                    
+                    <div class="calculator-results">
+                        <h3>Resultados</h3>
+                        
+                        <div class="result-item">
+                            <div class="result-label">Consumo Anual:</div>
+                            <div class="result-value" id="consumo-anual">-</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">Costo Anual:</div>
+                            <div class="result-value" id="costo-anual">-</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">Consumo per Cápita:</div>
+                            <div class="result-value" id="consumo-percapita">-</div>
+                        </div>
+                        
+                        <div class="result-item highlight">
+                            <div class="result-label">Ahorro Potencial con Energía Eólica:</div>
+                            <div class="result-value" id="ahorro-eolica">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="content-section">
+            <div class="container">
+                <h1>Contacto</h1>
+                
+                <div class="contact-container">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="nombre">Nombre *</label>
+                                <input type="text" id="nombre" required>
+                                <div class="error-message" id="error-nombre"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico *</label>
+                                <input type="email" id="email" required>
+                                <div class="error-message" id="error-email"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono">
+                                <div class="error-message" id="error-telefono"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="asunto">Asunto *</label>
+                                <select id="asunto" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="consulta">Consulta General</option>
+                                    <option value="datos">Solicitud de Datos</option>
+                                    <option value="colaboracion">Colaboración</option>
+                                    <option value="soporte">Soporte Técnico</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <div class="error-message" id="error-asunto"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje *</label>
+                                <textarea id="mensaje" rows="5" required></textarea>
+                                <div class="error-message" id="error-mensaje"></div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">📧 Enviar Mensaje</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <div class="info-item">
+                            <div class="info-icon">📧</div>
+                            <div>info@energiaeolica.co</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div>+57 (5) 123-4567</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div>Barranquilla, Colombia</div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h4>Síguenos</h4>
+                            <div class="social-buttons">
+                                <button class="social-btn">📘 Facebook</button>
+                                <button class="social-btn">🐦 Twitter</button>
+                                <button class="social-btn">💼 LinkedIn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Energía Eólica Colombia. Todos los derechos reservados.</p>
+            <p>Portal educativo e interactivo para el análisis de datos de energía eólica.</p>
+        </div>
+    </footer>
+
+    <script src="script3.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+/* === Paleta accesible y relajante === */
+:root {
+    --fondo-principal: #3ccaf5;
+    --fondo-secundario: #e8f1f9;
+    --color-texto: #2c3e50;
+    --color-texto-suave: #546e7a;
+    --acento-suave: #a5d6a7;
+    --acento-secundario: #90caf9;
+    --sombra-suave: rgba(0, 0, 0, 0.08);
+    --borde-suave: #d0d9e1;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #e8f1f9);
+    color: var(--color-texto);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+}
+
+/* Header corregido */
+.header {
+    background: rgba(54, 221, 13, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--sombra-suave);
+}
+
+.header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.logo h1 {
+    color: var(--color-texto);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.logo p {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+}
+
+.logo h1 {
+    color: var(--color-texto);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.logo p {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+.nav-menu {
+   margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    gap: 2em;
+}
+
+.menu-item {
+    background: var(--acento-suave);
+    color: var(--color-texto);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: var(--acento-secundario);
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 100px;
+    min-height: calc(100vh - 100px);
+}
+
+.content-section {
+    display: none;
+    padding: 2rem 0;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Animación del molino con colores suaves === */
+.energia-animation-container {
+    background: rgb(17, 101, 228);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 16px var(--sombra-suave);
+    position: relative;
+    overflow: hidden;
+}
+
+.animation-scene {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+/* Molino */
+.windmill {
+    position: relative;
+    height: 300px;
+    width: 80px;
+    z-index: 10;
+}
+
+.windmill-tower {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 200px;
+    background: linear-gradient(to bottom, #cfd8dc, #b0bec5);
+    border-radius: 8px 8px 0 0;
+}
+
+.windmill-nacelle {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    background: #90a4ae;
+    border-radius: 10px;
+}
+
+.windmill-blades {
+    position: absolute;
+    bottom: 210px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform-origin: center center;
+    animation: rotateBlade 3s linear infinite;
+}
+
+.blade {
+    position: absolute;
+    width: 4px;
+    height: 60px;
+    background: #eceff1;
+    border-radius: 2px 2px 0 0;
+    transform-origin: bottom center;
+    left: 50%;
+    bottom: 0;
+}
+
+.blade-1 { transform: translateX(-50%) rotate(0deg); }
+.blade-2 { transform: translateX(-50%) rotate(120deg); }
+.blade-3 { transform: translateX(-50%) rotate(240deg); }
+
+@keyframes rotateBlade {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Casa */
+.house {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    z-index: 10;
+}
+
+.house-base {
+    background: #bcaaa4;
+    border-radius: 5px;
+}
+
+.house-roof {
+    border-bottom: 40px solid #a1887f;
+}
+
+.house-window {
+    background: #fff3e0;
+    border: 2px solid #a1887f;
+}
+
+/* Panel de control */
+.control-panel {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px var(--sombra-suave);
+}
+
+.control-btn {
+    background: var(--acento-suave);
+    color: var(--color-texto);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: var(--acento-secundario);
+    color: white;
+}
+
+/* Gráficos */
+.chart-container {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 16px var(--sombra-suave);
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+.data-table th {
+    background: var(--acento-suave);
+    color: var(--color-texto);
+}
+/* Flujo de energía desde molino a casa */
+.energy-flow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 6px;
+    background: linear-gradient(90deg, #00e676, #76ff03);
+    border-radius: 3px;
+    animation: energyMove 3s linear infinite;
+    z-index: 5;
+}
+
+@keyframes energyMove {
+    0% {
+        transform: translateX(-100px) scaleX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100px) scaleX(1);
+        opacity: 0;
+    }
+}
+
+/* Luces de la casa encendidas */
+.window-light.on {
+    background-color: #fff176;
+    box-shadow: 0 0 10px #fff176;
+    animation: lightBlink 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes lightBlink {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+input.error, select.error, textarea.error {
+    border-color: #f7f4f4;
+    background-color: #0c0c0c;
+}
+
+input:disabled, select:disabled, textarea:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+.form-group {
+    position: relative;
+}
+
+.form-group {
+    position: relative;
+}
+
+.error-tooltip {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    background: #e74c3c;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.error-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e74c3c transparent transparent transparent;
+}
