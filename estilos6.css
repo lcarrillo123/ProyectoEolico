@@ -1,4 +1,4 @@
-/* GENERAL */
+/* General */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
     padding: 0 20px;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
     background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
@@ -40,7 +40,7 @@ body {
     text-decoration: none;
 }
 
-/* HERO */
+/* Hero */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1350&q=80') center/cover;
     color: white;
@@ -63,7 +63,7 @@ body {
     min-width: 200px;
 }
 
-/* SIMULADOR */
+/* Simulador */
 .simulator-container {
     display: flex;
     flex-wrap: wrap;
@@ -93,7 +93,7 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-/* PROYECTOS */
+/* Proyectos */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -122,7 +122,7 @@ body {
     padding: 1rem;
 }
 
-/* CALCULADORA */
+/* Calculadora */
 .calculator-container {
     display: flex;
     flex-wrap: wrap;
@@ -173,7 +173,7 @@ body {
     background: #f1f1f1;
 }
 
-/* FORMULARIO */
+/* Formulario */
 .form-group {
     margin-bottom: 1rem;
 }
@@ -207,7 +207,7 @@ body {
     cursor: pointer;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
 
     .hero-stats,

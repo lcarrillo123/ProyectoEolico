@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupNavigation();
     setupSimulator();
     setupWindControls();
-    setupAnimations();
     setupFormValidation();
 });
 
@@ -79,7 +78,7 @@ function displayComponentInfo(type, container) {
         <p><strong>Descripción:</strong> ${data.description}</p>
         <div class="component-specs">
             <h4>Especificaciones:</h4>
-            ${Object.entries(data.specs).map(([k, v]) => `<div class="spec-item"><span>${k}:</span><span>${v}</span></div>`).join('')}
+            ${Object.entries(data.specs).map(([k,v]) => `<div class="spec-item"><span>${k}:</span><span>${v}</span></div>`).join('')}
         </div>
         <h4>Funcionamiento:</h4><p>${data.function}</p>
         <h4>Características:</h4><p>${data.characteristics}</p>
@@ -120,7 +119,7 @@ function calcularConsumo() {
     const total = consumo * costo;
     document.getElementById('results-content').innerHTML = `
         <p><strong>Total mensual:</strong> $${total.toLocaleString()} COP</p>
-        <p><strong>Por persona:</strong> $${(total / personas).toLocaleString()} COP</p>
+        <p><strong>Por persona:</strong> $${(total/personas).toLocaleString()} COP</p>
         <p><strong>Consumo:</strong> ${consumo} kWh</p>
     `;
 }
